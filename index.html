@@ -7,24 +7,34 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>check even or odd numbers</h1>
-    <label for="checkNumber">write a number</label>
-    <input
-      type="text"
-      id="number"
-      placeholder="check number"
-      onclick="caluculate"
-    />
-    <h3 id="result"></h3>
-    <button onclick="caluculate()">check</button>
+    <h1>Check number for Even OR Odd</h1>
+    <form onsubmit="calculate(); return false">
+      <label for="Numbercheck">write Number</label>
+      <input
+        type="number"
+        min="1"
+        required
+        id="oddeven"
+        placeholder="write Number"
+      />
+      <button type="Check">Check</button>
+    </form>
+    <h3 id="show"></h3>
+
     <script>
-      const caluculate = () => {
-        if (number % 2 == 0) {
-          document.write("The number is even");
+      function calculate() {
+        let num = document.getElementById("oddeven").value;
+
+        if (num % 2 === 0) {
+          num = document.getElementById(
+            "show"
+          ).innerHTML = `Hurray! Your ${num} is an even number`;
         } else {
-          document.write("The number is odd");
+          num = document.getElementById(
+            "show"
+          ).innerHTML = `Ooops! Your ${num} is an Odd number`;
         }
-      };
+      }
     </script>
   </body>
 </html>
